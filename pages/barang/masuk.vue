@@ -87,7 +87,7 @@
                 <h2 class="card-title mb-0">
                   <i class="bi bi-box-seam text-danger"></i> Barang Masuk Terbaru
                 </h2>
-                <div>
+                <div class="no-print d-flex flex-wrap gap-2">
                   <select v-model="printFilter" class="form-select me-2" style="width: auto; display: inline-block;">
                     <option value="hari-ini">Hari Ini</option>
                     <option value="bulan-ini">Bulan Ini</option>
@@ -216,7 +216,6 @@ const printBarangMasuk = () => {
     return true;
   });
 
-  // Calculate total
   const totalJumlah = filteredData.reduce((sum, trx) => sum + trx.jumlah, 0);
 
   // print
@@ -268,7 +267,7 @@ const printBarangMasuk = () => {
         <style>
           body { font-family: Arial, sans-serif; }
           table { width: 100%; border-collapse: collapse; }
-          th, td { border: 1px solid #000; padding: 8px; text-align: left; }
+          th, td { border: 1px solid #000; padding: 8px; text-align: center; }
           th { background-color: #f2f2f2; }
         </style>
       </head>
@@ -369,5 +368,17 @@ header {
 
 .btn-success:hover {
   background-color: #218838;
+}
+
+@media (max-width: 576px) {
+  .flex-wrap {
+    flex-direction: column !important;
+    align-items: stretch;
+  }
+
+  .form-select,
+  .btn-success {
+    width: 100%;
+  }
 }
 </style>
