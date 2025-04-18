@@ -167,6 +167,10 @@
 </template>
 
 <script setup>
+useHead({
+  title: "Menu - Daya Honda"
+});
+  
 import { ref, onMounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 
