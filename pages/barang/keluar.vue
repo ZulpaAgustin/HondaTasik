@@ -129,6 +129,10 @@
 </template>
 
 <script setup>
+useHead({
+  title: "Barang Keluar - Daya Honda"
+});
+  
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import logo from '~/assets/Honda_Logo.webp';
