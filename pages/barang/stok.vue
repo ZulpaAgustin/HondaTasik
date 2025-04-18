@@ -65,6 +65,10 @@
 </template>
 
 <script setup>
+useHead({
+  title: "Stok Barang - Daya Honda"
+});
+  
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
